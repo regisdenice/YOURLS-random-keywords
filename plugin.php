@@ -6,6 +6,8 @@ Description: Assign random keywords to shorturls, like bitly (sho.rt/hJudjK)
 Version: 1.2
 Author: Ozh
 Author URI: https://ozh.org/
+working since YOURLS 1.8 https://github.com/YOURLS/YOURLS/releases/tag/1.8
+and at least up until 1.10.2 https://github.com/YOURLS/YOURLS/releases/tag/1.10.2
 */
 
 /* Release History:
