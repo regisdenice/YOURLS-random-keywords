@@ -1,7 +1,7 @@
 Random Keywords
 ===============
 
-Plugin for [YOURLS](http://yourls.org) Working with `1.10.2` and probably some older version.
+Plugin for [YOURLS](http://yourls.org) Working with `1.8` and at least up until `1.10.2`
 
 Description
 -----------
@@ -13,6 +13,10 @@ Installation
 2. Drop these files in that directory.
 3. Go to the Plugins administration page ( *eg* `http://sho.rt/admin/plugins.php` ) and activate the plugin.
 4. Have fun!
+
+Customisation
+------------
+Go to the Plugins administration page ( *eg* `http://sho.rt/admin/plugins.php?page=random_shorturl_settings` ) and change the `Random Keyword Length`
 
 License
 -------
