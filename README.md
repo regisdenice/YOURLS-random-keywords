@@ -16,7 +16,9 @@ Installation
 
 Customisation
 ------------
-Go to the Plugins administration page ( *eg* `http://sho.rt/admin/plugins.php?page=random_shorturl_settings` ) and change the `Random Keyword Length`
+Go to the Plugins administration page ( *eg* `http://sho.rt/admin/plugins.php?page=random_shorturl_settings` ) and change the `Random Keyword Length` parameter
+
+![screenshot](YOURLS-random-keywords.png?raw=true "Screenshot")
 
 License
 -------
