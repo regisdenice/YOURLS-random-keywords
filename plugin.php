@@ -1,47 +1,23 @@
-<?php
-/*
-Plugin Name: Random Keywords
-Plugin URI: http://yourls.org/
-Description: Assign random keywords to shorturls, like bitly (sho.rt/hJudjK)
-Version: 1.1
-Author: Ozh
-Author URI: http://ozh.org/
-*/
-
-/* Release History:
-*
-* 1.0 Initial release
-* 1.1 Added: don't increment sequential keyword counter & save one SQL query
-* Fixed: plugin now complies to character set defined in config.php
-*/
-
-global $ozh_random_keyword;
-
-/*
-* CONFIG: EDIT THIS
-*/
-
-/* Length of random keyword */
-$ozh_random_keyword['length'] = 5;
-
-/*
-* DO NOT EDIT FARTHER
-*/
-
-// Generate a random keyword
-yourls_add_filter( 'random_keyword', 'ozh_random_keyword' );
-function ozh_random_keyword() {
-        global $ozh_random_keyword;
-        $possible = yourls_get_shorturl_charset() ;
-        $str='';
-        while (strlen($str) < $ozh_random_keyword['length']) {
-                $str .= substr($possible, rand(0,strlen($possible)-1),1);
-        }
-        return $str;
+            <p>
+                <label>Random Keyword Length</label>
+                <input type="number" name="random_length" min="1" max="128" value="$random_length" />
+            </p>
+            <p><input type="submit" value="Save" class="button" /></p>
+            </form>
+        </main>
+HTML;
 }
 
-// Don't increment sequential keyword tracker
-yourls_add_filter( 'get_next_decimal', 'ozh_random_keyword_next_decimal' );
-function ozh_random_keyword_next_decimal( $next ) {
-        return ( $next - 1 );
+function ozh_random_shorturl_settings_update() {
+    $random_length = $_POST['random_length'];
+
+    if( $random_length ) {
+        if( is_numeric( $random_length ) ) {
+            yourls_update_option( 'random_shorturls_length', intval( $random_length ) );
+        } else {
+            echo "Error: Length given was not a number.";
+        }
+    } else {
+        echo "Error: No length value given.";
+    }
 }
